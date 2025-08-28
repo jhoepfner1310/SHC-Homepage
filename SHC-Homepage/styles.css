@@ -17,13 +17,22 @@
     --border-radius: 8px;
     --transition: all 0.3s ease;
     --orange: rgba(255, 130, 0, 1);
+    --leicht-orange: rgba(255, 130, 0, 0.5);
     --rot:rgba(200, 20, 20, 1);
+    --leicht-rot: rgba(200, 20, 20, 0.5);
     --grün:rgba(0, 120, 70, 1);
+    --leicht-grün: rgba(0, 120, 70, 0.5);
 }
+
+
 
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+}
+
+html.no-scroll {
+    overflow: hidden !important;
 }
 
 /* Klasse für verstecktes Scrolling */
@@ -32,6 +41,8 @@ body.no-scroll {
     width: 100%;
 }
 
+
+
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -39,7 +50,6 @@ body {
 }
 
 /*Deko-Elemente*/
-
 .circle-positioner{
     position: absolute;
     z-index: -10;
@@ -50,6 +60,7 @@ body {
 
 .hero-circle {
     border: 5px solid var(--grün);
+    background-color: var(--leicht-grün);
     border-radius: 50%;
     height: 100vmax;
     aspect-ratio: 1 / 1;
@@ -71,12 +82,13 @@ body {
 }
 
 .services-square{
-    border: 5px solid var(--orange);
+    border: 5px solid var(--rot);
+    background-color: var(--leicht-rot);
     height: 70%;
     aspect-ratio: 1 / 1;
     position: relative;
     transform: translateX(70%) rotate(45deg);
-}
+} 
 
 /* Wrapper */
 .wrapper {
@@ -191,6 +203,7 @@ p {
     text-align: center;
     text-decoration: none;
     width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
 }
 
 .cta-button:hover {
@@ -210,11 +223,21 @@ p {
     transition: transform 0.35s ease-in-out;
     text-align: center;
     text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
 }
 
 .cta-button-nav:hover {
     background-color: var(--grün);
     transform: scale(1.05);
+}
+
+/* Dark Mode Schatten für Buttons - normale Drop-Shadows */
+body[data-theme="dark"] .cta-button {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="dark"] .cta-button-nav {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Navigation - Mobile */
@@ -388,7 +411,7 @@ p {
 }
 
 .service-card {
-    background-color: rgba(255, 255, 255, 0.925);
+    background-color: rgba(255, 255, 255);
     padding: 1.5rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
@@ -406,6 +429,23 @@ p {
     flex: 0 0 15%;
     font-size: 2rem;
     color: var(--secondary-color);
+}
+
+/* Individuelle Farben für Service-Icons */
+#service-icon-1 {
+    color: var(--grün);
+}
+
+#service-icon-2 {
+    color: var(--orange);
+}
+
+#service-icon-3 {
+    color: var(--rot);
+}
+
+#service-icon-4 {
+    color: var(--grün);
 }
 
 .service-content {
@@ -446,6 +486,23 @@ p {
     color: var(--secondary-color);
 }
 
+/* Individuelle Farben für Why-Us-Icons */
+#why-us-icon-1 {
+    color: var(--orange);
+}
+
+#why-us-icon-2 {
+    color: var(--rot);
+}
+
+#why-us-icon-3 {
+    color: var(--grün);
+}
+
+#why-us-icon-4 {
+    color: var(--orange);
+}
+
 .why-us-content {
     flex: 0 0 85%;
 }
@@ -459,6 +516,30 @@ p {
     margin-bottom: 0;
 }
 
+.about-circle-positioner {
+    overflow: hidden;
+    position: absolute;
+    max-width: 100vw;
+    width: 45vmax;
+    aspect-ratio: 1 / 2;
+    justify-self: left;
+    display: flex;
+    align-items: center;
+    z-index: -10;
+    padding-top: 15vh;
+}
+
+.about-circle{
+    border: 5px solid var(--orange);
+    background-color: var(--leicht-orange);
+    border-radius: 50%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    transform: translateX(-50%); 
+}
+
+/*
 .wave-positioner{
     position: absolute;
     z-index: -10;
@@ -502,7 +583,7 @@ p {
     border: 5px solid rgba(200, 20, 20, 0.5);
     aspect-ratio: 1 / 1;
     transform: translateX(50%) translateX(-2.5px)  translateY(-51%);
-}
+} */
 
 .about-wrapper {
     display: flex;
@@ -525,7 +606,7 @@ p {
 .about-content {
     width: 70vw;
     padding: 3vh;
-    background-color: rgba(255, 255, 255, 0.925);
+    background-color: rgba(255, 255, 255);
     box-shadow: var(--shadow);
     border-radius: var(--border-radius);
     transition: transform 0.5s ease-in-out;
@@ -744,10 +825,45 @@ p {
     transform: scale(1.05);
 }
 
+/* Contact Info Icons */
+.contact-info i {
+    margin-right: 0.5rem;
+    color: var(--orange);
+    width: 16px;
+    text-align: center;
+}
+
+/* Individuelle Farben für Contact-Icons */
+#contact-icon-1 {
+    color: var(--rot);
+}
+
+#contact-icon-2 {
+    color: var(--orange);
+}
+
+#contact-icon-3 {
+    color: var(--grün);
+}
+
+#contact-icon-4 {
+    color: var(--orange);
+}
+
+.contact-info h3 i {
+    font-size: 1.2em;
+    margin-right: 0.75rem;
+}
+
+.contact-info p i {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
 /* Footer */
 .footer {
     background-color: var(--grün);
-    color: var(--white);
+    border-top: 5px solid rgb(0, 83, 48);
     padding: 2rem 0 0;
 }
 
@@ -794,7 +910,7 @@ p {
 
 .footer-stamp {
     height: 100px;
-    background-color: rgba(0, 87, 51, 1);
+    background-color: rgb(0, 84, 49);
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -874,7 +990,7 @@ p {
         flex: 0 0 65%;
         display: flex;
         justify-content: center;
-        gap: 2rem;
+        gap: 4rem;
     }
 
     .nav-links a {
@@ -1003,7 +1119,7 @@ p {
     }
 
     .about-image {
-        width: 40vw;
+        width: 32.5vw;
     }
 
 }
@@ -1134,11 +1250,7 @@ p {
 
 @media (min-width: 601px) {
     .hero-bottom p {
-        text-shadow:
-            1px 1px 0 #ccc,
-            2px 2px 0 #bbb,
-            3px 3px 0 #aaa,
-            4px 4px 4px rgba(0, 0, 0, 0.25);
+        text-shadow: 2px 2px 2px #87878783;
     }
 }
 
@@ -1158,225 +1270,6 @@ p {
         max-width: 100%;
         padding: 1rem;
     }
-}
-
-/* Dark Mode Styles */
-.dark-mode {
-    --primary-color: #e0e0e0;
-    --text-color: #e0e0e0;
-    --white: #1a1a1a;
-    --light-gray: #2d2d2d;
-    --shadow: 0px 10px 6px rgba(0, 0, 0, 0.3);
-    --card-color: rgba(49, 49, 49, 0.925);
-}
-
-/* Dark Mode Background */
-.dark-mode body {
-    background-color: #4a4a4a;
-    color: var(--light-gray);
-}
-
-.dark-mode html{
-    color: var(--light-gray);
-}
-
-.dark-mode .wrapper {
-    background-color: transparent;
-}
-
-.dark-mode .quote-box {
-    background-color: var(--card-color);
-}
-
-/* Dark Mode Navigation */
-.dark-mode .navbar {
-    background-color: rgba(49, 49, 49);
-    box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode .desktop-nav {
-    background-color: rgba(49, 49, 49);
-    box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode .mobile-menu {
-    background-color: #464646;
-}
-
-.dark-mode .mobile-menu-full {
-    background-color: #464646;
-}
-
-/* Dark Mode Mobile Full Menu Links */
-.dark-mode .mobile-menu-full a {
-    color: var(--primary-color);
-}
-
-/* Dark Mode Kontakt Button im Mobile Menu */
-.dark-mode .mobile-menu-full .cta-button-nav {
-    color: var(--primary-color) !important;
-}
-
-/* Dark Mode Text Colors */
-.dark-mode h1,
-.dark-mode h2,
-.dark-mode h3,
-.dark-mode h4 {
-    color: var(--primary-color);
-}
-
-/* Dark Mode H2 Text Shadow */
-.dark-mode h2 {
-    text-shadow:
-        1px 1px 0 #000,
-        2px 2px 0 #000,
-        3px 3px 0 #000,
-        4px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-/* Dark Mode Hero Subtitle - nur Desktop */
-@media (min-width: 601px) {
-    .dark-mode .hero-bottom p {
-        display: block;
-        color: var(--primary-color);
-        text-shadow: 
-            1px 1px 0 #000,
-            2px 2px 0 #000,
-            3px 3px 0 #000,
-            4px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-}
-
-.dark-mode .quote-text {
-    color: var(--primary-color);
-}
-
-.dark-mode .quote-author {
-    color: var(--text-color);
-}
-
-.dark-mode .mobile-menu a {
-    color: var(--primary-color);
-}
-
-.dark-mode .nav-links a {
-    color: var(--primary-color);
-}
-
-.dark-mode .nav-links a::after {
-    background-color: var(--grün);
-}
-
-.dark-mode .nav-links a:hover {
-    color: var(--grün);
-}
-
-/* Dark Mode Desktop Navigation Button */
-.dark-mode .desktop-nav .cta-button-nav {
-    color: var(--primary-color) !important;
-}
-
-.dark-mode .hamburger {
-    color: var(--primary-color);
-}
-
-/* Dark Mode Footer Links */
-.dark-mode .footer-section a {
-    color: white;
-    opacity: 0.8;
-}
-
-.dark-mode .footer-section a:hover {
-    opacity: 1;
-}
-
-/* Dark Mode H1 Text Shadow */
-.dark-mode h1 {
-    text-shadow: 
-        1px 1px 0 #000,
-        2px 2px 0 #000,
-        3px 3px 0 #000,
-        4px 4px 0 #000,
-        5px 5px 0 #000,
-        6px 6px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* Dark Mode Cards and Sections */
-.dark-mode .section {
-    background-color: rgba(57, 57, 57, 0.925);
-}
-
-.dark-mode .service-card {
-    background-color: var(--card-color);
-    color: var(--text-color);
-}
-
-.dark-mode .why-us-card {
-    background-color: var(--card-color);
-    color: var(--text-color);
-}
-
-.dark-mode .about-content {
-    background-color: var(--card-color);
-    color: var(--text-color);
-}
-
-.dark-mode .contact-info {
-    background-color: var(--card-color);
-    color: var(--text-color);
-}
-
-.dark-mode .contact-form-new {
-    background-color: var(--card-color);
-    color: var(--text-color);
-}
-
-.dark-mode .contact-form-new input,
-.dark-mode .contact-form-new textarea {
-    background-color: var(--card-color);
-    color: var(--text-color);
-    border-color: #777;
-}
-
-.dark-mode .contact-form-new input:focus,
-.dark-mode .contact-form-new textarea:focus {
-    background-color: #7a7a7a;
-    border-color: var(--secondary-color);
-}
-
-.dark-mode .contact-form-new label {
-    color: var(--primary-color);
-}
-
-.dark-mode .contact-form-new .form-checkbox label {
-    color: var(--text-color);
-}
-
-/* Dark Mode Flip Cards */
-.flip-card-back li:before {
- color: var(--primary-color);
-}
-
-.dark-mode .flip-card-back {
-    color: var(--primary-color);
-}
-
-.dark-mode .flip-card-front {
-    background-color: var(--card-color);
-    color: var(--primary-color);
-}
-
-.dark-mode .flip-card-front h3 {
-    color: var(--primary-color);
-}
-
-.dark-mode .flip-card-front p {
-    color: var(--primary-color);
-}
-
-/* Dark Mode Hero Circle */
-.dark-mode .hero-circle {
-    border-color: var(--grün);  /* Hellgrün statt dunkelgrün */
 }
 
 /* Theme Toggle Switch Styles */
@@ -1456,4 +1349,349 @@ p {
         display: flex;
         margin-top: 2rem;
     }
-} 
+}
+
+/* ===== DARK MODE STYLES ===== */
+/* Dark Mode über data-theme="dark" Attributselektoren */
+[data-theme="dark"] {
+    --dark-background-color: rgb(22, 40, 44) ;
+    --secondary-dark-color: rgb(44, 65, 68);
+}
+
+/* Dark Mode Body und HTML - heller Grauton */
+body[data-theme="dark"] {
+    background-color: var(--dark-background-color);  /* Heller, aber nicht zu heller Grauton für Dark Mode */
+}
+
+/* Dark Mode Navigation - gleiche Farbe wie Body */
+body[data-theme="dark"] .navbar {
+    background-color: var(--secondary-dark-color);
+    box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="dark"] .desktop-nav {
+    background-color: var(--secondary-dark-color);
+    box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="dark"] .mobile-menu {
+    background-color: var(--secondary-dark-color);
+}
+
+body[data-theme="dark"] .mobile-menu-full {
+    background-color: var(--dark-background-color);
+}
+
+/* Dark Mode Text-Container - dunklerer Grauton für besseren Kontrast */
+body[data-theme="dark"] .quote-box {
+    background-color: var(--secondary-dark-color);  /* Dunklerer Grauton für Text-Container */
+}
+
+body[data-theme="dark"] .service-card {
+    background-color: var(--secondary-dark-color);
+}
+
+body[data-theme="dark"] .why-us-card {
+    background-color: var(--secondary-dark-color);
+}
+
+body[data-theme="dark"] .about-content {
+    background-color: var(--secondary-dark-color);
+}
+
+body[data-theme="dark"] .contact-info {
+    background-color: var(--secondary-dark-color);
+}
+
+body[data-theme="dark"] .contact-form-new {
+    background-color: var(--secondary-dark-color);
+}
+
+body[data-theme="dark"] .flip-card-front {
+    background-color: var(--secondary-dark-color);
+}
+
+/* Dark Mode Texte in dunkleren Containern - Weiß für besseren Kontrast */
+body[data-theme="dark"] .quote-text {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .quote-author {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .service-card h3,
+body[data-theme="dark"] .service-card p {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .why-us-card h3,
+body[data-theme="dark"] .why-us-card p {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .about-content h3,
+body[data-theme="dark"] .about-content p {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .contact-info h3,
+body[data-theme="dark"] .contact-info p {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .flip-card-front h3,
+body[data-theme="dark"] .flip-card-front p {
+    color: #ffffff;
+}
+
+/* Dark Mode Navigation Links - Weiß für besseren Kontrast */
+body[data-theme="dark"] .mobile-menu-full a {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .mobile-menu-full .cta-button-nav {
+    color: #ffffff !important;
+}
+
+body[data-theme="dark"] .mobile-menu a {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .nav-links a {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .desktop-nav .cta-button-nav {
+    color: #ffffff !important;
+}
+
+body[data-theme="dark"] .hamburger {
+    color: #ffffff;
+}
+
+/* Dark Mode Überschriften - Invertiert: Weiß mit schwarzem Schatten */
+body[data-theme="dark"] h1 {
+    color: #ffffff;
+    text-shadow:
+        1px 1px 0 #000,
+        2px 2px 0 #000,
+        3px 3px 0 #000,
+        4px 4px 0 #000,
+        5px 5px 0 #000,
+        6px 6px 8px rgba(0, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] h2 {
+    color: #ffffff;
+    text-shadow:
+        1px 1px 0 #000,
+        2px 2px 0 #000,
+        3px 3px 0 #000,
+        4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+body[data-theme="dark"] h3 {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] h4 {
+    color: #ffffff;
+}
+
+/* Dark Mode Hero Subtitle - nur Desktop, weiß mit schwarzem Schatten */
+@media (min-width: 601px) {
+    body[data-theme="dark"] .hero-bottom p {
+        display: block;
+        color: #ffffff;
+        text-shadow: 
+            1px 1px 0 #000,
+            2px 2px 0 #000,
+            3px 3px 0 #000,
+            4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* Dark Mode Navigation Hover-Effekte */
+body[data-theme="dark"] .nav-links a::after {
+    background-color: var(--grün);
+}
+
+body[data-theme="dark"] .nav-links a:hover {
+    color: var(--grün);
+}
+
+/* Dark Mode Footer Links - Weiß für besseren Kontrast */
+body[data-theme="dark"] .footer-section a {
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+body[data-theme="dark"] .footer-section a:hover {
+    opacity: 1;
+}
+
+/* Dark Mode Kontaktformular - Eingabefelder und Labels */
+body[data-theme="dark"] .contact-form-new input,
+body[data-theme="dark"] .contact-form-new textarea {
+    background-color: var(--secondary-dark-color);
+    color: #ffffff;
+    border-color: #777;
+}
+
+body[data-theme="dark"] .contact-form-new input:focus,
+body[data-theme="dark"] .contact-form-new textarea:focus {
+    background-color: #5a5a5a;
+    border-color: var(--secondary-color);
+}
+
+body[data-theme="dark"] .contact-form-new label {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .contact-form-new .form-checkbox label {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .footer {
+    border-top: 6px solid var(--grün);
+    background-color: var(--secondary-dark-color);
+}
+
+body[data-theme="dark"] .footer-stamp {
+    background-color: var(--dark-background-color);
+}
+
+/* Dark Mode Flip Cards - Rückseite bleibt bunt, Vorderseite dunkel */
+body[data-theme="dark"] .flip-card-back {
+    color: #ffffff;  /* Text auf der Rückseite bleibt weiß */
+}
+
+/* Zusätzliche Sichtbarkeit für Dark Mode */
+body[data-theme="dark"] .animated-background {
+    z-index: -3; /* Noch höherer z-index im Dark Mode */
+}
+
+/* ===== SCROLL REVEAL EFFEKT ===== */
+/* Subtiler Einblende-Effekt für alle Elemente unterhalb des Hero-Bereichs */
+
+/* Standard-Zustand: Elemente sind unsichtbar und leicht nach oben verschoben */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Sichtbarer Zustand: Elemente werden in ihre finale Position gebracht */
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Verschiedene Verzögerungen für gestaffelte Animationen */
+.scroll-reveal.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.scroll-reveal.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.scroll-reveal.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.scroll-reveal.delay-4 {
+    transition-delay: 0.4s;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .scroll-reveal {
+        transform: translateY(20px); /* Kleinere Verschiebung auf Mobile */
+        transition-duration: 0.6s; /* Schnellere Animation auf Mobile */
+    }
+}
+
+/* Dark Mode Anpassungen */
+body[data-theme="dark"] .scroll-reveal {
+    /* Gleiche Animation, aber möglicherweise andere Timing-Werte */
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Spezielle Anpassungen für bestimmte Elemente */
+.scroll-reveal.service-card {
+    transition-delay: 0.1s; /* Service-Cards erscheinen zuerst */
+}
+
+.scroll-reveal.why-us-card {
+    transition-delay: 0.2s; /* Why-Us-Cards erscheinen danach */
+}
+
+.scroll-reveal.about-content {
+    transition-delay: 0.3s; /* About-Content erscheint später */
+}
+
+.scroll-reveal.contact-info {
+    transition-delay: 0.4s; /* Contact-Info erscheint zuletzt */
+}
+
+/* Flip-Cards mit gestaffelter Animation */
+.scroll-reveal.flip-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.scroll-reveal.flip-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+/* Smooth Scrolling für bessere Performance */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Performance-Optimierung für Animationen */
+.scroll-reveal {
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* WICHTIG: Hover-Effekte für scroll-reveal Elemente wiederherstellen */
+.scroll-reveal.service-card:hover {
+    transform: scale(1.05) !important; /* !important um scroll-reveal zu überschreiben */
+}
+
+.scroll-reveal.why-us-card:hover {
+    transform: scale(1.05) !important;
+}
+
+.scroll-reveal.about-content:hover {
+    transform: scale(1.05) !important;
+}
+
+.scroll-reveal.about-image:hover {
+    transform: scale(1.05) !important;
+}
+
+.scroll-reveal.contact-info:hover {
+    transform: scale(1.05) !important;
+}
+
+.scroll-reveal.contact-form-new:hover {
+    transform: scale(1.05) !important;
+}
+
+.scroll-reveal.contact-map:hover {
+    transform: scale(1.05) !important;
+}
+
+/* Flip-Cards Hover-Effekte - NUR für die ursprüngliche Funktionalität */
+/* Die Karten sollen sich bei KLICK wenden, nicht bei HOVER */
+
+/* CTA-Button Hover-Effekte wiederherstellen */
+.scroll-reveal.cta-button:hover {
+    background-color: var(--grün) !important;
+    transform: scale(1.05) !important;
+}
+

@@ -10,10 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.style.opacity = "1";
         mobileMenu.style.zIndex = "500";
         document.body.classList.add('no-scroll');
+        document.documentElement.classList.add('no-scroll');
       } else {
         mobileMenu.style.opacity = "0";
         mobileMenu.style.zIndex = "-100";
         document.body.classList.remove('no-scroll');
+        document.documentElement.classList.remove('no-scroll');
       }
       buttonClicked = !buttonClicked;
     });
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
           mobileMenu.style.opacity = "0";
           mobileMenu.style.zIndex = "-100";
           document.body.classList.remove('no-scroll');
+          document.documentElement.classList.remove('no-scroll');
           buttonClicked = false;
         });
       });

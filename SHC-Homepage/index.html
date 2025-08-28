@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <div class="circle-positioner">
         <div class="hero-circle"></div>
     </div>
@@ -30,7 +29,6 @@
         <a href="#services">Services</a>
         <a href="#why-us">Warum wir</a>
         <a href="#about">Über uns</a>
-
         <a href="#contact" class="cta-button-nav">Kontakt</a>
     </div>
     <!-- Mobile Navigation -->
@@ -118,10 +116,10 @@
             <div class="services-square"></div>
         </div>
 
-        <h2>Unsere Services</h2>
+        <h2 class="scroll-reveal">Unsere Services</h2>
         <div class="wrapper services-wrapper">
-            <div class="service-card">
-                <div class="service-icon">
+            <div class="service-card scroll-reveal">
+                <div class="service-icon" id="service-icon-1">
                     <i class="fas fa-chart-line"></i>
                 </div>
                 <div class="service-content">
@@ -129,8 +127,8 @@
                     <p>Entwicklung maßgeschneiderter Strategien für Ihr Unternehmen</p>
                 </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon">
+            <div class="service-card scroll-reveal">
+                <div class="service-icon" id="service-icon-2">
                     <i class="fas fa-users"></i>
                 </div>
                 <div class="service-content">
@@ -138,8 +136,8 @@
                     <p>Optimierung Ihrer Unternehmensstruktur und Prozesse</p>
                 </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon">
+            <div class="service-card scroll-reveal">
+                <div class="service-icon" id="service-icon-3">
                     <i class="fas fa-lightbulb"></i>
                 </div>
                 <div class="service-content">
@@ -147,8 +145,8 @@
                     <p>Förderung von Innovation und digitaler Transformation</p>
                 </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon">
+            <div class="service-card scroll-reveal">
+                <div class="service-icon" id="service-icon-4">
                     <i class="fas fa-handshake"></i>
                 </div>
                 <div class="service-content">
@@ -162,6 +160,10 @@
     <!-- About Us Section -->
     <section id="about" class="section">
 
+        <div class="about-circle-positioner">
+            <div class="about-circle"></div>
+        </div>
+        <!--
         <div class="wave-positioner"> 
 
             <div class="left-half-circle-cutter"> 
@@ -171,13 +173,14 @@
             <div class="right-half-circle-cutter">
                 <div class="right-half-circle"></div>
             </div>
+        -->
 
         </div>
 
-        <h2>Über uns</h2>
+        <h2 class="scroll-reveal">Über uns</h2>
         <div class="wrapper about-wrapper">
-            <img class="about-image" src="/images/about-us-2.png" alt="SHC Consulting Team">
-            <div class="about-content">
+            <img class="about-image scroll-reveal" src="/images/about-us-2.png" alt="SHC Consulting Team">
+            <div class="about-content scroll-reveal">
                 <div class="about-icon">
                     <i class="fas fa-users"></i>
                 </div>
@@ -189,10 +192,10 @@
 
     <!-- Why Us Section -->
     <section id="why-us" class="section">
-        <h2>Warum SHC Consulting?</h2>
+        <h2 class="scroll-reveal">Warum SHC Consulting?</h2>
         <div class="wrapper why-us-wrapper">
-            <div class="why-us-card">
-                <div class="why-us-icon">
+            <div class="why-us-card scroll-reveal">
+                <div class="why-us-icon" id="why-us-icon-1">
                     <i class="fas fa-medal"></i>
                 </div>
                 <div class="why-us-content">
@@ -200,8 +203,8 @@
                     <p>Über 20 Jahre Erfahrung in der Unternehmensberatung</p>
                 </div>
             </div>
-            <div class="why-us-card">
-                <div class="why-us-icon">
+            <div class="why-us-card scroll-reveal">
+                <div class="why-us-icon" id="why-us-icon-2">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div class="why-us-content">
@@ -209,8 +212,8 @@
                     <p>Hochqualifizierte Berater mit Branchenkenntnis</p>
                 </div>
             </div>
-            <div class="why-us-card">
-                <div class="why-us-icon">
+            <div class="why-us-card scroll-reveal">
+                <div class="why-us-icon" id="why-us-icon-3">
                     <i class="fas fa-heart"></i>
                 </div>
                 <div class="why-us-content">
@@ -218,8 +221,8 @@
                     <p>Engagement für den Erfolg unserer Kunden</p>
                 </div>
             </div>
-            <div class="why-us-card">
-                <div class="why-us-icon">
+            <div class="why-us-card scroll-reveal">
+                <div class="why-us-icon" id="why-us-icon-4">
                     <i class="fas fa-shield-alt"></i>
                 </div>
                 <div class="why-us-content">
@@ -232,13 +235,13 @@
 
     <!--qualifikationen Sektion-->
     <section class="section" id="qualifications">
-        <h2>Qualifikationen</h2>
+        <h2 class="scroll-reveal">Qualifikationen</h2>
         <div class="wrapper qualifications-wrapper">
-            <div class="flip-card">
+            <div class="flip-card scroll-reveal">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <img src="/images/about-us.png" alt="Dr. Sarah Müller" class="flip-card-image">
-                        <h3>Dr. Sarah Müller</h3>
+                        <h3 id="flip-card-2-name">Dr. Sarah Müller</h3>
                         <p>Senior Beraterin</p>
                     </div>
                     <div class="flip-card-back">
@@ -252,7 +255,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flip-card">
+            <div class="flip-card scroll-reveal">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <img src="/images/about-us-2.png" alt="Michael Weber" class="flip-card-image">
@@ -275,19 +278,19 @@
 
     <!-- Contact Section -->
     <section id="contact" class = "section">
-        <h2>Kontakt</h2>
+        <h2 class="scroll-reveal">Kontakt</h2>
         <div class="wrapper contact-wrapper">
             <div class="contact-map-info-wrapper">
-                <div class="contact-info">
-                    <h3>Standort</h3>
-                    <p>Musterstraße 123<br>10115 Berlin<br>Deutschland</p>
-                    <p>Tel: +49 30 1234567<br>E-Mail: info@shc-consulting.de</p>
+                <div class="contact-info scroll-reveal">
+                    <h3><i class="fas fa-map-marker-alt" id="contact-icon-1"></i> Standort</h3>
+                    <p><i class="fas fa-building" id="contact-icon-2"></i> Musterstraße 123<br>10115 Berlin<br>Deutschland</p>
+                    <p><i class="fas fa-phone" id="contact-icon-3"></i> Tel: +49 30 1234567<br><i class="fas fa-envelope" id="contact-icon-4"></i> E-Mail: info@shc-consulting.de</p>
                 </div>
-                <div class="contact-map">
+                <div class="contact-map scroll-reveal">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.5!2d13.4!3d52.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDMwJzAwLjAiTiAxM8KwMjQnMDAuMCJF!5e0!3m2!1sde!2sde!4v1234567890!5m2!1sde!2sde" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-            <form class="contact-form-new">
+            <form class="contact-form-new scroll-reveal">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required autocomplete="name">
                 <label for="email">E-Mail</label>
@@ -342,6 +345,9 @@
     <script src="calculateHeight.js"></script>
     <script src="qualifications.js"></script>
     <script src="darkmode.js"></script>
+    <script src="scroll-reveal.js"></script>
+    <script src="cockpit.js"></script>
+    <script src="home.js"></script>
 
 </body>
 </html> 
